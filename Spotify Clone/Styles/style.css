@@ -1,0 +1,93 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #121212;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 196px;
+  background-color: #000000;
+  padding: 24px;
+}
+.sidebar .logo svg {
+  width: 90px;
+  margin-right: 300px;
+}
+.sidebar .navigation ul {
+  list-style: none;
+  margin-top: 20px;
+  text-decoration: none;
+}
+.sidebar .navigation ul li {
+  padding: 10px 0px;
+}
+.sidebar .navigation ul li a:hover,
+.sidebar .navigation ul li a:active,
+.sidebar .navigation ul li a:focus {
+  color: #ffffff;
+}
+.sidebar .navigation ul li a {
+  color: #b9b8b8;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+.sidebar .navigation ul li a .home,
+.sidebar .navigation ul li a .search,
+.sidebar .navigation ul li a .library {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+.sidebar .navigation ul li a .fa {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.sidebar .navigation ul li img {
+  width: 19px;
+  height: 19px;
+  margin-right: 8px;
+}
+.sidebar .navigation ul a:hover .create-playlist,
+.sidebar .navigation ul .liked-songs,
+.sidebar .navigation ul a:active .create-playlist,
+.sidebar .navigation ul .liked-songs,
+.sidebar .navigation ul a:focus .create-playlist,
+.sidebar .navigation ul .liked-songs {
+  color: #ffffff;
+}
+.sidebar .policies {
+  position: absolute;
+  bottom: 100px;
+}
+.sidebar .policies a:active,
+.sidebar .policies a:hover,
+.sidebar .policies a:focus {
+  color: #ffffff;
+}
+.sidebar .policies ul {
+  list-style: none;
+  text-decoration: none;
+  margin-top: 20px;
+}
+.sidebar .policies ul li {
+  padding-bottom: 5px;
+}
+.sidebar .policies ul li a {
+  color: #b3b3b3;
+  font-weight: 500;
+  text-decoration: none;
+}
+.sidebar .policies ul li a a:hover,
+.sidebar .policies ul li a a:active,
+.sidebar .policies ul li a a:focus {
+  text-decoration: underline;
+}/*# sourceMappingURL=style.css.map */

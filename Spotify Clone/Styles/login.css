@@ -1,0 +1,192 @@
+body {
+  margin: 50px 350px 50px 350px;
+  position: relative;
+  background-color: #1a1a1a;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  display: block;
+}
+
+.all {
+  display: flexbox;
+}
+
+.logo {
+  width: 30%;
+  height: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+h1 {
+  color: #ffffff;
+  margin-top: 50px;
+  font-size: 3em;
+  font-weight: 650;
+}
+
+.form input {
+  margin-left: auto;
+  margin-right: auto;
+  margin: 10px 0px 1px 0px;
+  background-color: #121212;
+  inline-size: 100%;
+  padding: 4px;
+  min-block-size: 48px;
+  font-size: 15px;
+}
+
+.form a {
+  color: #ffffff;
+}
+
+.toggle {
+  margin-top: 0px;
+}
+
+.form .toggle {
+  padding-bottom: 0px;
+  margin: 0px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #b3b3b3;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 3px;
+  background-color: black;
+  transition: 0.2s;
+}
+
+input:checked + span {
+  background-color: #1ed760;
+}
+
+input:focus + span {
+  box-shadow: 0 0 1px #1ed760;
+}
+
+input:checked + .slider:before {
+  transform: translateX(10px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.loginbutton {
+  background-color: #1ed760;
+  color: #121212;
+  font-size: 40px;
+  font-weight: 500;
+  inline-size: 100%;
+  padding: 4px;
+  min-block-size: 48px;
+  border-radius: 45px;
+}
+
+.loginbutton:hover,
+.loginbutton:active,
+.loginbutton:focus {
+  cursor: pointer;
+}
+
+.bottomlogin {
+  padding: 4px;
+  min-block-size: 48px;
+  font-size: 15px;
+}
+
+.soc-media ul li {
+  list-style: none;
+  margin: 1em;
+}
+
+.soc-media ul li a button {
+  margin-left: auto;
+  margin-right: auto;
+  border-color: white;
+  border: 5px;
+  inline-size: 100%;
+  padding: 4px;
+  min-block-size: 48px;
+  font-size: 15px;
+}
+
+.soc-media ul li button {
+  border: 1px #b3b3b3;
+  border-radius: 45px;
+  padding: 10px;
+  background: #121212;
+  color: white;
+  font-size: 1rem;
+  font-weight: 350;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+.soc-media ul li span {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0 0 30px;
+}
+
+.soc-media ul li button:hover,
+.soc-media ul li button:active,
+.soc-media ul li button:focus {
+  cursor: pointer;
+  border: 5px;
+}
+
+.soc-media ul li button:active,
+.soc-media ul li button:focus {
+  font-size: 11px;
+  font-weight: 400px;
+}
+
+footer {
+  display: flex;
+}
+
+footer h2 {
+  float: left;
+}
+
+footer a {
+  float: right;
+  color: white;
+}/*# sourceMappingURL=login.css.map */

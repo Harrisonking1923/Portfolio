@@ -1,0 +1,246 @@
+// display: block; centres the whole page 
+body {
+    margin: 50px 350px 50px 350px;
+    position: relative;
+    background-color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    display: block;
+    // display: flexbox; puts parent child items in a container as to allow for responsiveness 
+}
+
+.all {
+    display: flexbox;
+}
+
+.logo {
+    width: 30%;
+    height: 30%;
+    // These centre the logo 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+// em vs px are units of measurement - px is the same every time 
+// em is scaled relative to the parent element
+
+h1 {
+    color: #ffffff;
+    margin-top: 50px;
+    font-size: 3em;
+    font-weight: 650;
+}
+
+.form input {
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px 0px 1px 0px;
+    background-color: #121212;
+    inline-size: 100%;  //is a logical property that defines width of horizontal/height 
+    // of vertical elements and responds to the page size accordingly whereas widthpx is fixed
+    // for full width of box
+    padding: 4px;
+    min-block-size: 48px;
+    font-size: 15px;
+}
+
+// change  password anchor colour 
+.form a {
+    color: #ffffff;
+}
+
+// SLIDER TOGGLE BUTTON START 
+
+.toggle {
+    margin-top: 0px;
+}
+
+.form .toggle {
+    padding-bottom: 0px;
+    margin: 0px;
+}
+
+
+// Position of slider 
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+}
+
+// Changes colour on off  
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+// slider properties 
+.slider {
+    position: absolute;
+    cursor: pointer;
+    // Position of slider
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b3b3b3;
+    transition: .4s;
+}
+
+// slider inner-circle 
+.slider:before {
+    position: absolute;
+    content: "";
+    // These 4 align the circle
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 3px;
+    background-color: black;
+    transition: .2s;
+    // How long the movement takes when clicked 
+}
+
+// Changes colour to Spotify green when clicked 
+// :checked pseudo-class selects elements when they are in the selected state. 
+// Only associates with input elements of type="radio" and type="checkbox" whenchecked/toggled to 
+// an on state
+input:checked+span {
+    background-color: #1ed760;
+}
+
+// Creates shadow  
+// 'input:focus/input:checked span' & 'input:focus/input:checked .slider' are the same 
+input:focus+span {
+    box-shadow: 0 0 1px #1ed760;
+}
+
+// :before and :after pseudo-class allows you to insert something before the content. Without this the 
+// toggle before wont appear, only the after 
+input:checked+.slider:before {
+    // -webkit-transform: translateX(26px);
+    // -ms-transform: translateX(100px); 
+    transform: translateX(10px);
+    // How far across the inner-circle ends up 
+}
+
+// Rounded slider 
+.slider.round {
+    border-radius: 34px;
+}
+
+// slider inner-circle 
+.slider.round:before {
+    border-radius: 50%;
+}
+
+// SLIDER END 
+.loginbutton {
+    background-color: #1ed760;
+    color: #121212;
+    font-size: 40px;
+    font-weight: 500;
+    inline-size: 100%;
+    // for full width of box
+    padding: 4px;
+    min-block-size: 48px;
+    border-radius: 45px;
+}
+
+.loginbutton:hover,
+.loginbutton:active,
+.loginbutton:focus {
+    cursor: pointer;
+}
+
+
+// FORM TOGGLE END 
+
+// FORM END 
+
+// LOGIN PAGE TOP END 
+
+
+// LOGIN PAGE BOTTOM START 
+
+// for social media buttons 
+
+.bottomlogin {
+    padding: 4px;
+    min-block-size: 48px;
+    font-size: 15px;
+}
+
+.soc-media ul li {
+    list-style: none;
+    margin: 1em;
+}
+
+.soc-media ul li a button {
+    margin-left: auto;
+    margin-right: auto;
+    border-color: white;
+    border: 5px;
+    inline-size: 100%;
+    //for full width of box
+    padding: 4px;
+    min-block-size: 48px;
+    font-size: 15px;
+}
+
+
+
+// for buttons specifically 
+.soc-media ul li button {
+    border: 1px #b3b3b3;
+    border-radius: 45px;
+    padding: 10px;
+    background: #121212;
+    color: white;
+    font-size: 1rem;
+    font-weight: 350;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+
+// seperates the logos with text by positioning logo 
+.soc-media ul li span {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0 0 0 30px;
+}
+
+// actions when buttons are hovered and clicked 
+.soc-media ul li button:hover ,
+.soc-media ul li button:active,
+.soc-media ul li button:focus {
+    cursor: pointer;
+    border: 5px;
+}
+
+.soc-media ul li button:active,
+.soc-media ul li button:focus {
+    font-size: 11px;
+    font-weight: 400px;
+}
+
+// footer START 
+
+footer {
+    display: flex;
+}
+
+footer h2 {
+    float: left;
+}
+
+footer a {
+    float: right;
+    color: white;
+}
