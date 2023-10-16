@@ -1,0 +1,808 @@
+html,
+body,
+img,
+header,
+nav,
+main,
+ul,
+li,
+a,
+h2,
+div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+  font-family: "Martian Mono", monospace;
+}
+
+body {
+  margin: 15px;
+}
+
+/* The Overlay (background) */
+.burger {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0);
+  /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/opacity */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%;
+  /* 25% from the top */
+  width: 100%;
+  /* 100% width */
+  text-align: center;
+  /* Centered text/links */
+  margin-top: 30px;
+  /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.burger a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  /* Display block instead of inline */
+  transition: 0.3s;
+  /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.burger a:hover,
+.burger a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.burger .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .burger a {
+    font-size: 20px;
+  }
+  .burger .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+img {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200px;
+  width: 800px;
+  margin: 50px;
+  padding: 50px;
+}
+.heading a {
+  text-decoration: none;
+}
+.heading a h2 {
+  font-size: 25px;
+  font-weight: 550;
+}
+.heading a h5 {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+li {
+  list-style: none;
+}
+
+main {
+  margin: 20px 30px;
+}
+
+.hover-text {
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  margin: 8px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+figcaption {
+  max-width: 920px;
+  min-width: auto;
+  width: 100%;
+}
+
+.hover-text * {
+  box-sizing: border-box;
+  transition: all 0.45s ease;
+}
+
+.hover-text::before,
+.hover-text::after {
+  background-color: #ff5f41;
+  border-top: 32px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 32px solid rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  transition: all 0.3s ease;
+  z-index: 1;
+  opacity: 0;
+  transform: scaleY(2);
+}
+
+.hover-text h3 {
+  vertical-align: top;
+  max-width: 100%;
+  backface-visibility: hidden;
+}
+
+.hover-text figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1em;
+  opacity: 0;
+  z-index: 2;
+  transition-delay: 0.1s;
+  font-size: 24px;
+  font-family: sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hover-text:hover::before,
+.hover-text:hover::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.hover-text:hover > img {
+  opacity: 0.4;
+  height: 100px;
+}
+
+.hover-text:hover figcaption {
+  opacity: 1;
+  height: 100px;
+}
+
+.section1 {
+  margin-bottom: -20px;
+}
+.section1 .parent {
+  height: 100vh;
+}
+.section1 .parent .container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+.section1 .parent .container .video-background {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+@media (min-aspect-ratio: 16/9) {
+  .section1 .parent .container .container {
+    width: 100%;
+    height: 100%;
+  }
+}
+.section1 .parent .container .overlay {
+  display: flex;
+  width: 80%;
+  height: 80%;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  position: absolute;
+  padding-bottom: 100px;
+  top: 75%;
+  left: 40%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.section1 .parent .container .overlay .heading {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  max-width: 100%;
+  height: auto;
+  margin-left: 150px;
+}
+.section1 .parent .container .overlay .heading h1 {
+  font-size: 35px;
+  font-weight: 650;
+}
+
+.all {
+  background: #f9f9f9;
+}
+
+.section2 {
+  margin: -40px 90px 20px 90px;
+}
+.section2 .parent {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.section2 .parent .left .hover-text {
+  background: none;
+}
+.section2 .parent .left .hover-text h2 {
+  color: #0b203f;
+  font-size: 46px;
+  font-weight: 550;
+}
+.section2 .parent .left .hover-text figcaption video {
+  max-width: 700px;
+  max-height: auto;
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+.section2 .parent .right {
+  width: 65%;
+  padding-left: 80px;
+}
+.section2 .parent .right h4 {
+  color: #ff5f41;
+  font-size: 40px;
+  font-weight: 550;
+}
+.section2 .parent .right h5 {
+  color: #0b203f;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.section3 {
+  margin: 20px 70px;
+}
+.section3 .parent {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.section3 .parent .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+.section3 .parent .left {
+  width: 65%;
+  padding-right: 80px;
+}
+.section3 .parent .left h5 {
+  color: #ff5f41;
+  font-size: 25px;
+  font-weight: 600;
+  padding-right: 70px;
+}
+.section3 .parent .right .hover-text {
+  background: none;
+}
+.section3 .parent .right .hover-text h2 {
+  color: #0b203f;
+  font-size: 46px;
+  font-weight: 550;
+}
+.section3 .parent .right .hover-text figcaption img {
+  max-width: 700px;
+  max-height: auto;
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+.section3 .parent .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section3 .parent .row .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  border-radius: 15px;
+  min-width: 250px;
+  min-height: 300px;
+  max-width: 325px;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0px 0px 9.3px rgba(0, 0, 0, 0.181), 0px 0px 206px rgba(0, 0, 0, 0.18);
+  opacity: 1;
+  transform: translateZ(0);
+  text-align: center;
+}
+.section3 .parent .row .item .icon {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 26px;
+  width: 100%;
+}
+.section3 .parent .row .item .icon img {
+  width: 45px;
+  height: auto;
+}
+.section3 .parent .row .item .icon span {
+  font-size: 45px;
+  font-weight: bold;
+  color: black;
+}
+.section3 .parent .row .item .text h2 {
+  color: #ff5f41;
+  font-size: 30px;
+  font-weight: 630;
+  margin: auto;
+}
+.section3 .parent .row .item .text p {
+  display: flex;
+  flex: 1;
+  color: #0b203f;
+  font-size: 20px;
+  font-weight: 550;
+}
+
+.section4 {
+  margin: 10px 0;
+  margin-bottom: 20px;
+}
+.section4 .parent .left {
+  margin-bottom: 10px;
+}
+.section4 .parent .left .hover-text {
+  background: none;
+}
+.section4 .parent .left .hover-text h2 {
+  color: #0b203f;
+  font-size: 46px;
+  font-weight: 550;
+}
+.section4 .parent .left .hover-text figcaption img {
+  max-width: 700px;
+  max-height: auto;
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+.section4 .parent .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.section4 .parent .right ul {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 15px;
+}
+.section4 .parent .right ul li {
+  display: grid;
+  max-width: 140px;
+  max-height: auto;
+  margin: 20px;
+}
+.section4 .parent .right ul li img {
+  display: grid;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(1);
+  margin: 10px;
+  cursor: pointer;
+}
+.section4 .parent .right ul li img:hover {
+  filter: none;
+  transition: 150ms linear 100ms;
+}
+
+.section5 {
+  margin: 10px 0;
+}
+.section5 .parent .left .hover-text {
+  background: none;
+}
+.section5 .parent .left .hover-text h2 {
+  color: #0b203f;
+  font-size: 46px;
+  font-weight: 620;
+}
+.section5 .parent .left .hover-text h5 {
+  color: #ff5f41;
+  font-size: 25px;
+  font-weight: 550;
+}
+.section5 .parent .left .hover-text figcaption img {
+  max-width: 700px;
+  max-height: 700px;
+  width: 40%;
+  height: auto;
+  opacity: 0.8;
+}
+.section5 .parent .right {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.section5 .parent .right .row {
+  display: flex;
+  align-items: center;
+}
+.section5 .parent .right .row .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  border-radius: 15px;
+  width: 190px;
+  height: 115px;
+  margin: 20px;
+  padding: 25px;
+  background: hsla(4, 0%, 0%, 0.91);
+  box-shadow: 0px 0px 9.3px rgba(0, 0, 0, 0.181), 0px 0px 25.8px rgba(0, 0, 0, 0.173), 0px 0px 62.1px rgba(0, 0, 0, 0.159), 0px 0px 206px rgba(0, 0, 0, 0.18);
+  opacity: 1;
+  transform: translateZ(0);
+  text-align: center;
+}
+.section5 .parent .right .row .item h2 {
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 630;
+}
+
+.section6 {
+  margin: 10px 0;
+}
+.section6 .parent .hover-text {
+  background: none;
+}
+.section6 .parent .hover-text h2 {
+  color: #0b203f;
+  font-size: 46px;
+  font-weight: 620;
+}
+.section6 .parent .hover-text h5 {
+  color: #ff5f41;
+  font-size: 28px;
+  font-weight: 590;
+  margin: 10px 40px;
+}
+.section6 .parent .hover-text figcaption img {
+  max-width: 700px;
+  max-height: 700px;
+  width: 40%;
+  height: auto;
+  opacity: 0.8;
+  position: absolute;
+  transform: translate -50%, -50%;
+}
+.section6 .parent .middle .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section6 .parent .middle .row .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  border-radius: 15px;
+  width: 190px;
+  height: 115px;
+  margin: 20px;
+  padding: 25px;
+  background: hsla(4, 0%, 0%, 0.91);
+  box-shadow: 0px 0px 9.3px rgba(0, 0, 0, 0.181), 0px 0px 25.8px rgba(0, 0, 0, 0.173), 0px 0px 62.1px rgba(0, 0, 0, 0.159), 0px 0px 206px rgba(0, 0, 0, 0.18);
+  opacity: 1;
+  transform: translateZ(0);
+  text-align: center;
+}
+.section6 .parent .middle .row .item h2 {
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 630;
+}
+.section6 .parent .bottoms {
+  margin: 60px 0;
+  padding: 40px 0;
+}
+.section6 .parent .bottoms .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f9f9f9;
+}
+.section6 .parent .bottoms .row .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  min-width: 250px;
+  min-height: 300px;
+  max-width: 325px;
+  max-height: 425px;
+  height: 115px;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0px 0px 9.3px rgba(0, 0, 0, 0.181), 0px 0px 206px rgba(0, 0, 0, 0.18);
+  opacity: 1;
+  transform: translateZ(0);
+  text-align: center;
+}
+.section6 .parent .bottoms .row .item .text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.section6 .parent .bottoms .row .item .text h2 {
+  color: #ff5f41;
+  font-size: 23px;
+  font-weight: 630;
+}
+.section6 .parent .bottoms .row .item .text p {
+  display: flex;
+  flex: 1;
+  color: #0b203f;
+  font-size: 15px;
+  font-weight: 550;
+}
+
+.section7 {
+  margin: 10px 0;
+}
+.section7 .parent .left .hover-text {
+  margin-bottom: 20px;
+  background: none;
+}
+.section7 .parent .left .hover-text h3 {
+  color: #0b203f;
+  font-size: 46px;
+  font-weight: 550;
+}
+.section7 .parent .left .hover-text figcaption video {
+  max-width: 700px;
+  max-height: auto;
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+  position: absolute;
+  transform: translate -50%, -50%;
+}
+.section7 .parent .right {
+  padding: 0 80px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.section7 .parent .right .awards .item {
+  display: flex;
+  justify-content: space-between;
+  margin: 35px 20px;
+}
+.section7 .parent .right .awards .item .top {
+  padding-right: 30px;
+  overflow: hidden;
+  margin-right: 40px 0;
+}
+.section7 .parent .right .awards .item .top img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: 550px;
+}
+.section7 .parent .right .awards .item .bottom h2 {
+  color: #0b203f;
+  font-size: 46px;
+  font-weight: 550;
+}
+.section7 .parent .right .awards .item .bottom h5 {
+  color: #ff5f41;
+  font-size: 25px;
+  font-weight: 550;
+}
+
+.section8 {
+  margin: 10px 0;
+}
+.section8 .parent .right .right-inside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1em;
+  text-align: center;
+}
+.section8 .parent .right .right-inside h2 {
+  color: #0b203f;
+  font-size: 46px;
+  font-weight: 620;
+}
+.section8 .parent .right .right-inside h5 {
+  color: #ff5f41;
+  font-size: 28px;
+  font-weight: 590;
+  margin: 10px 40px;
+}
+.section8 .parent .right .right-inside .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section8 .parent .right .right-inside .button button {
+  background: #005f85;
+  color: white;
+  border: 1px;
+  border-radius: 25px;
+  width: 140px;
+  height: 54px;
+  padding: 15px;
+  font-size: 17px;
+  font-weight: 590;
+  cursor: pointer;
+}
+.section8 .parent .right .right-inside .button button span {
+  width: 15px;
+  height: 15px;
+  color: #ff5f41;
+  padding-left: 5px;
+}
+
+.section9 {
+  margin: 30px 0;
+}
+.section10 {
+  margin: 20px 0;
+}
+.section10 .parent {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-content: center;
+  padding: 0 30px;
+}
+.section10 .parent .column {
+  transition: all ease 0.4s;
+  padding: 10px;
+}
+.section10 .parent .map {
+  width: 100%;
+  float: left;
+  width: 32%;
+}
+.section10 .parent .map iframe {
+  max-width: 1000px;
+  max-height: 1000px;
+  min-width: 600px;
+  min-height: 600px;
+  padding: 0 15px;
+}
+.section10 .parent .contact {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-content: center;
+  vertical-align: center;
+  padding: 0 15px;
+}
+.section10 .parent .social {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  padding: 0 15px;
+}
+.section10 .parent .social ul {
+  width: 100%;
+}
+.section10 .parent .social ul li a span {
+  font-size: 70px;
+  color: black;
+}
+
+.section11 {
+  margin: 20px;
+}
+.section11 .parent {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  vertical-align: center;
+}
+
+for sticky navbar footer {
+  background-color: black;
+  color: white;
+  font-size: 30px;
+  margin: 0 5px;
+}
+for sticky navbar footer .copyright p {
+  font-size: 12.5px;
+  font-weight: 350;
+  margin-top: 5px;
+  margin-bottom: 7px;
+  padding: 15px;
+  text-align: center;
+}
+for sticky navbar footer .copyright p .fa {
+  height: 7px;
+  width: 7px;
+}/*# sourceMappingURL=style.css.map */
