@@ -587,16 +587,16 @@ header nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 .section7 .parent .left {
-  display: block;
-  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 .section7 .parent .left img {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
+  max-width: none;
+  max-height: none;
 }
 .section7 .parent .right {
   background: #000;
