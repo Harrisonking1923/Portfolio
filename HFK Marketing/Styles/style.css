@@ -52,6 +52,24 @@ main {
   overflow: hidden;
 }
 
+@media screen and (max-width: 1024px) {
+  #navbarSupportedContent {
+    display: none;
+  }
+  .navbar {
+    padding: 10px;
+  }
+  .section3.section,
+  .section3.section .parent .bottom {
+    margin: 0;
+  }
+  .section3 .parent .bottom .item {
+    flex-direction: column;
+  }
+  .section .parent {
+    flex-direction: column;
+  }
+}
 .left {
   display: flex;
   flex-direction: column;

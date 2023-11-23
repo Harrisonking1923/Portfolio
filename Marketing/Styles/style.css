@@ -778,23 +778,39 @@ figcaption {
   color: black;
 }
 
-.section11 {
+.footer {
   margin: 20px;
 }
-.section11 .parent {
+.footer .social {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  flex-direction: row;
+  align-content: center;
+  vertical-align: center;
+}
+.footer .social ul {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-content: center;
+  vertical-align: center;
+}
+.footer .social ul li {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
   align-content: center;
   vertical-align: center;
 }
 
-for sticky navbar footer {
+/* The Overlay (background) */
+footer {
   background-color: black;
   color: white;
   font-size: 30px;
   margin: 0 5px;
 }
-for sticky navbar footer .copyright p {
+footer .copyright p {
   font-size: 12.5px;
   font-weight: 350;
   margin-top: 5px;
@@ -802,7 +818,7 @@ for sticky navbar footer .copyright p {
   padding: 15px;
   text-align: center;
 }
-for sticky navbar footer .copyright p .fa {
+footer .copyright p .fa {
   height: 7px;
   width: 7px;
 }/*# sourceMappingURL=style.css.map */
